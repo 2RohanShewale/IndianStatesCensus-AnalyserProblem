@@ -19,7 +19,12 @@ namespace IndianStateCensusAnalyserEX
             {
                 throw new IndianStateCensusExceptions(IndianStateCensusExceptions.IndianStateException.INCORRECT_TYPE, "The Given File is not CSV");
             }
-            
+            var csvFile = File.ReadAllLines(filePath);
+            var header = csvFile[0];
+            if (header.Contains("/"))
+            {
+                throw new IndianStateCensusExceptions(IndianStateCensusExceptions.IndianStateException.INCORRECT_DELIMITER,"Incorrect Delimiter");
+            }
             using (var reader = new StreamReader(filePath))
             {
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))

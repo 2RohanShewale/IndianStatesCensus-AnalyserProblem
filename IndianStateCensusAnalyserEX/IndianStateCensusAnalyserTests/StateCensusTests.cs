@@ -1,5 +1,6 @@
 using IndianStateCensusAnalyserEx;
 using IndianStateCensusAnalyserEX;
+using NuGet.Frameworks;
 
 namespace IndianStateCensusAnalyserTests
 {
@@ -8,6 +9,7 @@ namespace IndianStateCensusAnalyserTests
         public static string stateCensusDataPath = @"C:\Users\shewa\RFP-256\IndianStatesCensus-AnalyserProblem\IndianStateCensusAnalyserEX\IndianStateCensusAnalyserEX\Files\StateCensusData.csv";
         public static string incorrectPath = @"C:\Users\shewa\RFP-256\IndianStatesCensus-AnalyserProblem\IndianStateCensusAnalyserEX\IndianStateCensusAnalyserEX\Files\StateCen.csv";
         public static string incorrectType = @"C:\Users\shewa\RFP-256\IndianStatesCensus-AnalyserProblem\IndianStateCensusAnalyserEX\IndianStateCensusAnalyserEX\Files\StateCensusData.txt";
+        public static string incorrectDelimiterPath = @"C:\Users\shewa\RFP-256\IndianStatesCensus-AnalyserProblem\IndianStateCensusAnalyserEX\IndianStateCensusAnalyserEX\Files\StateCensusData - Copy.csv";
 
         CsvStateCensus csvStateCensus = new CsvStateCensus();
         StateCensusAnalyzer stateCensus = new StateCensusAnalyzer();
@@ -39,6 +41,18 @@ namespace IndianStateCensusAnalyserTests
             catch (IndianStateCensusExceptions ex)
             {
                 Assert.AreEqual("The Given File is not CSV",ex.Message);
+            }
+        }
+        [Test]
+        public void GivenIncorrectDelimiter()
+        {
+            try
+            {
+                stateCensus.ReadStateCensusData(incorrectDelimiterPath);
+            }
+            catch (IndianStateCensusExceptions ex)
+            {
+                Assert.AreEqual("Incorrect Delimiter", ex.Message);
             }
         }
     }
