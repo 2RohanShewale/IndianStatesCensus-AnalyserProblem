@@ -10,7 +10,8 @@ namespace IndianStateCensusAnalyserEX
     {
         public enum IndianStateException
         {
-            INCORRECT_PATH
+            INCORRECT_PATH,
+            INCORRECT_TYPE
         }
         public IndianStateException type;
         public IndianStateCensusExceptions(IndianStateException type, string message):base(message)

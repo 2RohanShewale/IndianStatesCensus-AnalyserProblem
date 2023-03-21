@@ -15,6 +15,10 @@ namespace IndianStateCensusAnalyserEX
             {
                 throw new IndianStateCensusExceptions(IndianStateCensusExceptions.IndianStateException.INCORRECT_PATH, "Incorrect Path");
             }
+            if (!filePath.EndsWith(".csv"))
+            {
+                throw new IndianStateCensusExceptions(IndianStateCensusExceptions.IndianStateException.INCORRECT_TYPE, "The Given File is not CSV");
+            }
             
             using (var reader = new StreamReader(filePath))
             {
