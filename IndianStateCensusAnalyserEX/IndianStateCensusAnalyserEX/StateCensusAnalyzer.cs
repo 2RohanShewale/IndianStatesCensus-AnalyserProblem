@@ -11,6 +11,10 @@ namespace IndianStateCensusAnalyserEX
     {
         public int ReadStateCensusData(String filePath)
         {
+            if (!File.Exists(filePath))
+            {
+                throw new IndianStateCensusExceptions(IndianStateCensusExceptions.IndianStateException.INCORRECT_PATH, "Incorrect Path");
+            }
             
             using (var reader = new StreamReader(filePath))
             {
