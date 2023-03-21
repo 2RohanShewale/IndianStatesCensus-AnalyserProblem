@@ -73,6 +73,7 @@
     <Compile Include="CsvStateCensus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StateCensusAnalyzer.cs" />
     <Compile Include="StateCodeModel.cs" />
   </ItemGroup>
   <ItemGroup>

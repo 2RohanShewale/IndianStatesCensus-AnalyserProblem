@@ -1,16 +1,20 @@
+using IndianStateCensusAnalyserEx;
+using IndianStateCensusAnalyserEX;
+
 namespace IndianStateCensusAnalyserTests
 {
     public class Tests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
+        public static string stateCensusDataPath = @"C:\Users\shewa\RFP-256\IndianStatesCensus-AnalyserProblem\IndianStateCensusAnalyserEX\IndianStateCensusAnalyserEX\Files\StateCensusData.csv";
+
+        CsvStateCensus csvStateCensus = new CsvStateCensus();
+        StateCensusAnalyzer stateCensus = new StateCensusAnalyzer();
 
         [Test]
-        public void Test1()
+        public void GivenStateCensusDataShouldMatchNumberOfReturnMatches()
         {
-            Assert.Pass();
+            Assert.AreEqual(stateCensus.ReadStateCensusData(stateCensusDataPath),csvStateCensus.ReadStateCensusData(stateCensusDataPath));
         }
+       
     }
 }
