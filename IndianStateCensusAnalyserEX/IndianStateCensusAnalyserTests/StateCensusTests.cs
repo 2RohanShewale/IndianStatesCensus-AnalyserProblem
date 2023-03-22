@@ -1,6 +1,5 @@
 using IndianStateCensusAnalyserEx;
 using IndianStateCensusAnalyserEX;
-using NuGet.Frameworks;
 
 namespace IndianStateCensusAnalyserTests
 {
@@ -17,7 +16,7 @@ namespace IndianStateCensusAnalyserTests
         [Test]
         public void GivenStateCensusDataShouldMatchNumberOfReturnMatches()
         {
-            Assert.AreEqual(stateCensus.ReadStateCensusData(stateCensusDataPath),csvStateCensus.ReadStateCensusData(stateCensusDataPath));
+            Assert.AreEqual(stateCensus.ReadStateCensusData(stateCensusDataPath), csvStateCensus.ReadStateCensusData(stateCensusDataPath));
         }
         [Test]
         public void GivenIncorrectPathShouldThrowPathNotCorrectException()
@@ -40,7 +39,7 @@ namespace IndianStateCensusAnalyserTests
             }
             catch (IndianStateCensusExceptions ex)
             {
-                Assert.AreEqual("The Given File is not CSV",ex.Message);
+                Assert.AreEqual("The Given File is not CSV", ex.Message);
             }
         }
         [Test]
@@ -62,6 +61,7 @@ namespace IndianStateCensusAnalyserTests
             {
                 string Header = "State,Population,AreaInSqKm,DensityPerSqKm";
                 stateCensus.ReadStateCensusData(stateCensusDataPath, Header);
+
             }
             catch (IndianStateCensusExceptions ex)
             {

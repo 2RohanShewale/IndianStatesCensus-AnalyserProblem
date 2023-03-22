@@ -23,7 +23,7 @@ namespace IndianStateCensusAnalyserEX
             var header = csvFile[0];
             if (header.Contains("/"))
             {
-                throw new IndianStateCensusExceptions(IndianStateCensusExceptions.IndianStateException.INCORRECT_DELIMITER,"Incorrect Delimiter");
+                throw new IndianStateCensusExceptions(IndianStateCensusExceptions.IndianStateException.INCORRECT_DELIMITER, "Incorrect Delimiter");
             }
             using (var reader = new StreamReader(filePath))
             {
@@ -45,7 +45,7 @@ namespace IndianStateCensusAnalyserEX
             var csvfile = File.ReadAllLines(filePath);
             string header = csvfile[0];
 
-            if (!header.Equals(actualHeader))
+            if (!header.Equals(actualHeader ))
                 return true;
             else
                 throw new IndianStateCensusExceptions(IndianStateCensusExceptions.IndianStateException.INCORRECT_HEADER, "Incorrect Header");
