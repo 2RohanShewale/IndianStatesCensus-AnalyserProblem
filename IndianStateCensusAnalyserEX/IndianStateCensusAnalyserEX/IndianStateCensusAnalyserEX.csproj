@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Files\StateCensusData.txt" />
+    <Content Include="Files\StateCode.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
