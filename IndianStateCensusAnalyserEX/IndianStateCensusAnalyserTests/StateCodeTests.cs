@@ -14,8 +14,8 @@ namespace IndianStateCensusAnalyserTests
         [Test]
         public void GivenStateCodeDataShoubldMatchNumberOfRecords()
         {
-            
-            Assert.AreEqual(csvStateCode.ReadStateCode(stateCodePath),stateCodeAnalyzer.ReadStateCode(stateCodePath));
+
+            Assert.AreEqual(csvStateCode.ReadStateCode(stateCodePath), stateCodeAnalyzer.ReadStateCode(stateCodePath));
         }
         [Test]
         public void GivenIncorrectPathShouldThrowPathNotCorrectException()
@@ -51,6 +51,19 @@ namespace IndianStateCensusAnalyserTests
             catch (IndianStateExceptions ex)
             {
                 Assert.AreEqual("Incorrect Delimiter", ex.Message);
+            }
+        }
+        [Test]
+        public void GivenIncorrectHeader()
+        {
+            try
+            {
+                string Header = "SrNo,StateName,TIN,StateCode";
+                stateCodeAnalyzer.ReadStateCode(stateCodePath, Header);
+            }
+            catch (IndianStateExceptions ex)
+            {
+                Assert.AreEqual("Incorrect Header", ex.Message);
             }
         }
 
