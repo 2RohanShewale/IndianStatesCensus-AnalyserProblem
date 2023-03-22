@@ -12,7 +12,8 @@ namespace IndianStateCensusAnalyserEX
         {
             INCORRECT_PATH,
             INCORRECT_TYPE,
-            INCORRECT_DELIMITER
+            INCORRECT_DELIMITER,
+            INCORRECT_HEADER
         }
         public IndianStateException type;
         public IndianStateCensusExceptions(IndianStateException type, string message):base(message)
