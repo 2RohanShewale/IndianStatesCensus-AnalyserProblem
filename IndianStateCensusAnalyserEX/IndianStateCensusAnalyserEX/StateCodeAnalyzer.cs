@@ -13,6 +13,10 @@ namespace IndianStateCensusAnalyserEX
     {
         public int ReadStateCode(string filePath)
         {
+            if (!File.Exists(filePath))
+            {
+                throw new IndianStateExceptions(IndianStateExceptions.IndianStateExceptionType.INCORRECT_PATH,"File Does Not Exist");
+            }
             using (var streamReader = new StreamReader(filePath))
             {
                 using (var csvReader = new CsvReader(streamReader, CultureInfo.InvariantCulture))

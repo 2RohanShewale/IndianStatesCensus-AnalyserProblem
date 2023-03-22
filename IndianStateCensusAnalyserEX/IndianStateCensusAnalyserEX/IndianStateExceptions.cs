@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace IndianStateCensusAnalyserEX
 {
-    public class IndianStateCensusExceptions:Exception
+    public class IndianStateExceptions:Exception
     {
-        public enum IndianStateException
+        public enum IndianStateExceptionType
         {
             INCORRECT_PATH,
             INCORRECT_TYPE,
             INCORRECT_DELIMITER,
             INCORRECT_HEADER
         }
-        public IndianStateException type;
-        public IndianStateCensusExceptions(IndianStateException type, string message):base(message)
+        public IndianStateExceptionType type;
+        public IndianStateExceptions(IndianStateExceptionType type, string message):base(message)
         {
             this.type = type;
         }

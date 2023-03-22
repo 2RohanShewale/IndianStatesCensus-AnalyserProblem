@@ -13,17 +13,17 @@ namespace IndianStateCensusAnalyserEX
         {
             if (!File.Exists(filePath))
             {
-                throw new IndianStateCensusExceptions(IndianStateCensusExceptions.IndianStateException.INCORRECT_PATH, "Incorrect Path");
+                throw new IndianStateExceptions(IndianStateExceptions.IndianStateExceptionType.INCORRECT_PATH, "Incorrect Path");
             }
             if (!filePath.EndsWith(".csv"))
             {
-                throw new IndianStateCensusExceptions(IndianStateCensusExceptions.IndianStateException.INCORRECT_TYPE, "The Given File is not CSV");
+                throw new IndianStateExceptions(IndianStateExceptions.IndianStateExceptionType.INCORRECT_TYPE, "The Given File is not CSV");
             }
             var csvFile = File.ReadAllLines(filePath);
             var header = csvFile[0];
             if (header.Contains("/"))
             {
-                throw new IndianStateCensusExceptions(IndianStateCensusExceptions.IndianStateException.INCORRECT_DELIMITER, "Incorrect Delimiter");
+                throw new IndianStateExceptions(IndianStateExceptions.IndianStateExceptionType.INCORRECT_DELIMITER, "Incorrect Delimiter");
             }
             using (var reader = new StreamReader(filePath))
             {
@@ -48,7 +48,7 @@ namespace IndianStateCensusAnalyserEX
             if (!header.Equals(actualHeader ))
                 return true;
             else
-                throw new IndianStateCensusExceptions(IndianStateCensusExceptions.IndianStateException.INCORRECT_HEADER, "Incorrect Header");
+                throw new IndianStateExceptions(IndianStateExceptions.IndianStateExceptionType.INCORRECT_HEADER, "Incorrect Header");
 
         }
     }

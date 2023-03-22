@@ -25,7 +25,7 @@ namespace IndianStateCensusAnalyserTests
             {
                 stateCensus.ReadStateCensusData(incorrectPath);
             }
-            catch (IndianStateCensusExceptions ex)
+            catch (IndianStateExceptions ex)
             {
                 Assert.AreEqual("Incorrect Path", ex.Message);
             }
@@ -37,7 +37,7 @@ namespace IndianStateCensusAnalyserTests
             {
                 stateCensus.ReadStateCensusData(incorrectType);
             }
-            catch (IndianStateCensusExceptions ex)
+            catch (IndianStateExceptions ex)
             {
                 Assert.AreEqual("The Given File is not CSV", ex.Message);
             }
@@ -49,7 +49,7 @@ namespace IndianStateCensusAnalyserTests
             {
                 stateCensus.ReadStateCensusData(incorrectDelimiterPath);
             }
-            catch (IndianStateCensusExceptions ex)
+            catch (IndianStateExceptions ex)
             {
                 Assert.AreEqual("Incorrect Delimiter", ex.Message);
             }
@@ -63,7 +63,7 @@ namespace IndianStateCensusAnalyserTests
                 stateCensus.ReadStateCensusData(stateCensusDataPath, Header);
 
             }
-            catch (IndianStateCensusExceptions ex)
+            catch (IndianStateExceptions ex)
             {
                 Assert.AreEqual("Incorrect Header", ex.Message);
             }
