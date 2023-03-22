@@ -14,12 +14,12 @@ namespace IndianStateCensusAnalyserEx
         static void Main(string[] args)
         {
 
-            StateCensusAnalyzer stateCensus = new StateCensusAnalyzer();
-            stateCensus.ReadStateCensusData(stateCensusDataPath);
+            //StateCensusAnalyzer stateCensus = new StateCensusAnalyzer();
+            //stateCensus.ReadStateCensusData(stateCensusDataPath);
             //CsvStateCensus csv = new CsvStateCensus();
             //csv.ReadStateCensusData(filePath);
-            //CsvStateCode csvStateCode = new CsvStateCode();
-            //csvStateCode.ReadStateCode(stateCodePath);
+            CsvStateCode csvStateCode = new CsvStateCode();
+            csvStateCode.ReadStateCode(stateCodePath);
 
             Console.ReadKey();
         }
