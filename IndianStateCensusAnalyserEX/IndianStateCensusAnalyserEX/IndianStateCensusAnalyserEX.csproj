@@ -82,6 +82,7 @@
     <None Include="App.config" />
     <None Include="Files\StateCensusData - Copy.csv" />
     <None Include="Files\StateCensusData.csv" />
+    <None Include="Files\StateCode - Copy.csv" />
     <None Include="Files\StateCode.csv" />
     <None Include="packages.config" />
   </ItemGroup>
